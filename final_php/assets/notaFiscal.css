@@ -1,0 +1,16 @@
+.btn {
+    display: flex;
+    align-self: center;
+    width: 20rem;
+    justify-content: center;
+    height: 3rem;
+    align-items: center;
+  
+    margin-top: 3rem;
+    background-color: rgb(79,0,106);
+    color: #fff;
+    padding: 0.6rem;
+    border-radius: 0.3rem;
+    transition: 0.4s;
+  }
+  

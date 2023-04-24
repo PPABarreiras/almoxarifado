@@ -1,0 +1,116 @@
+body {
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr 25fr;
+  grid-template-rows: 80px 1fr 80px;
+  grid-template-areas: "aside header" "aside main" "aside footer";
+  height: 100vh;
+  background: #DCD6F7;
+  /* background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(124, 106, 131, 1) 37%,
+    rgba(255, 197, 247, 1) 100%,
+    rgba(224, 191, 235, 1) 100%,
+    rgba(191, 143, 204, 1) 150%
+  ); */
+}
+
+.main {
+  grid-area: main;
+  overflow-y: scroll;
+  padding: 0 4rem 0 0;
+}
+
+.main::-webkit-scrollbar {
+  width: 0 !important;
+  display: none;
+}
+
+header {
+  display: flex;
+  width: 100vw;
+  grid-area: header;
+  justify-content: space-between;
+  padding-inline-end: 5%;
+  align-items: center;
+  gap: 0.3rem;
+  background: rgb(79,0,106);
+  background: linear-gradient(357deg, rgba(79,0,106,1) 17%, rgba(111,0,145,1) 44%, rgba(116,0,147,1) 58%, rgba(161,0,187,1) 100%);
+}
+
+header img {
+  max-width: 250px;
+}
+
+.details {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.details p, .details a {
+  margin-right: 3px;
+  transform: translateY(15%);
+  padding: 0;
+}
+
+header img {
+  width: 16rem;
+}
+
+@media screen and (max-width: 400px) {
+  header img {
+    width: 5rem;
+    height: 5rem;
+  }
+}
+
+.iconUser {
+  width: 1rem;
+  height: 1rem;
+  margin-right: 0.4em;
+  margin-top: 0.3em;
+  filter: invert(100%) sepia(0%) saturate(7500%) hue-rotate(132deg) brightness(117%) contrast(110%);
+}
+
+.iconCar {
+  max-width: 1.6rem;
+  margin-right: 1.5em;
+  filter: invert(100%) sepia(10%) saturate(7500%) hue-rotate(132deg) brightness(5000%) contrast(110%);
+}
+
+.iconCar:hover {
+  filter: invert(74%) sepia(6%) saturate(84%) hue-rotate(131deg) brightness(90%) contrast(89%);
+}
+
+.footer {
+  grid-area: footer;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%);
+  color: #fff;
+  /* background-color: rgb(243 232 243 / 80%); */
+  text-align: center;
+  width: 100vw;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+/* 
+.iconAside:hover {
+  filter: invert(13%) sepia(29%) saturate(7409%) hue-rotate(275deg) brightness(0%) contrast(122%); 
+} */
+
+.list {
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+.list {
+  margin-top: 1.4em;
+}

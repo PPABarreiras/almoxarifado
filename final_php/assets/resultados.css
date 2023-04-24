@@ -1,0 +1,310 @@
+.container {
+  padding: 2rem;
+}
+
+table {
+  border: 1px solid #ccc;
+  border-collapse: collapse;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  table-layout: fixed;
+}
+
+table caption {
+  font-size: 2em;
+  font-family: ui-monospace;
+  margin: 0.5em 0 0.75em;
+}
+
+table tr {
+  background-color: #f8f8f8;
+  border: 1px solid #ddd;
+  padding: 0.35em;
+}
+
+table th,
+table td {
+  padding: 0.625em;
+  text-align: center;
+}
+
+table th {
+  font-size: 0.85em;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background-color: rgb(79, 0, 106);
+  color: #fff;
+}
+
+@media screen and (max-width: 600px) {
+  table {
+    border: 0;
+  }
+
+  table caption {
+    font-size: 1.3em;
+  }
+
+  table thead {
+    border: none;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+
+  table tr {
+    border-bottom: 3px solid #ddd;
+    display: block;
+    margin-bottom: 0.625em;
+  }
+
+  table td {
+    border-bottom: 1px solid #ddd;
+    display: block;
+    font-size: 0.8em;
+    text-align: right;
+  }
+
+  table td::before {
+    /*
+        * aria-label has no advantage, it won't be read inside a table
+        content: attr(aria-label);
+        */
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  table td:last-child {
+    border-bottom: 0;
+  }
+}
+
+.radius {
+  border-radius: 50%;
+  width: 1rem;
+  height: 1rem;
+  flex-shrink: 0;
+}
+
+#statusRed {
+  background-color: red;
+}
+
+#statusGreen {
+  background-color: green;
+}
+
+#statusYellow {
+  background-color: yellow;
+}
+
+.acoes {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.status {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (max-width: 600px) {
+  .status {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+.btnActions {
+  color: #fff;
+  padding: 0.3rem;
+  border-radius: 0.3rem;
+  background-color: #060552;
+}
+
+.detailsProduct {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 0.4rem;
+  padding-bottom: 0.4rem;
+  flex-wrap: wrap;
+}
+
+.content {
+  padding: 1rem;
+}
+
+/* Css pagination */
+
+/* .list {
+    width: 100%;
+    max-width: 768px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    margin-top: 25px;
+    font-size: 20px;
+    font-weight: bold;
+  } */
+
+main .list .item {
+  padding: 15px;
+  border-bottom: 1px solid #ccc;
+}
+main .list .item:last-of-type {
+  border-bottom: none;
+}
+main .list .item:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.pagenumbers {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.pagenumbers button {
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+
+  appearance: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+
+  background-color: #44aaee;
+
+  margin: 5px;
+  transition: 0.4s;
+
+  color: #fff;
+  font-size: 18px;
+  text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
+}
+
+.pagenumbers button:hover {
+  background-color: #44eeaa;
+}
+
+.pagenumbers button.active {
+  background-color: #44eeaa;
+  box-shadow: inset 0px 0px 4px rgba(0, 0, 0, 0.2);
+}
+/* Fim  da pagination */
+
+/* Modal detalhes */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  background-color: #f6f6f6;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #514c4c;
+  width: 30%;
+}
+
+h1 {
+  text-align: center;
+  color: #060552;
+  font-size: 1.4rem;
+  font-weight: 800;
+}
+
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+/* Fim do Modal */
+
+/* CheckBox */
+.custom-checkbox {
+  font-size: 20px;
+}
+
+.custom-checkbox input {
+  display: none;
+}
+
+.custom-checkbox input:checked + label:before {
+  background-image: url("data:image/svg+xml,%0A%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 10 10'%3E%3Cg class='nc-icon-wrapper' stroke-width='1' fill='%23555555'%3E%3Cpath fill='none' stroke='%23FFFFFF' stroke-linecap='round' stroke-linejoin='round' stroke-miterlimit='10' data-cap='butt' d='M2.83 4.72l1.58 1.58 2.83-2.83'/%3E%3C/g%3E%3C/svg%3E");
+  background-color: #060552;
+  background-position: center;
+  border: none;
+  padding: 1px;
+}
+
+.custom-checkbox input + label:before {
+  content: "";
+  width: 18px;
+  height: 18px;
+  border-radius: 4px;
+  background-color: white;
+  border: 1px solid gray;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 8px;
+  margin-bottom: 3px;
+}
+/* Fim do CheckBox */
+
+.counter, .products {
+  width: 50%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.counter input {
+  width: 25px;
+  border: 0;
+  line-height: 20px;
+  font-size: 15px;
+  text-align: center;
+  background: #060552;
+  color: #fff;
+  appearance: none;
+  outline: 0;
+}
+.counter span {
+  display: block;
+  font-size: 25px;
+  padding: 0 10px;
+  cursor: pointer;
+  color: #060552;
+  user-select: none;
+}

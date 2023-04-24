@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/login.css" />
+    <link rel="stylesheet" href="assets/global.css" />
+    <script type="text/javascript" src="./node_modules/jquery/dist/jquery.min.js"></script> 
+    <script type="text/javascript" src="./node_modules/jQuery-Mask-Plugin-master/src/jquery.mask.js"></script> 
+    <title>Login</title>
+  </head>
+  <body>
+    <div class="content">
+      <form  action="login.php" method="POST" class="form">
+        <ul class="title">
+          <a href="cadUserhtml.php">
+            <li>Cadastrar-se</li>
+          </a>
+        </ul>
+
+        <div class="errorContainer" data-warning-visible="false">
+          <span class="error-message" data-warning-text></span>
+        </div>
+        <div class="box">
+          <input type="text" name="username" data-field="username" value=""
+            autocomplete="off" id="cpf" required />
+          <span>CPF</span>
+          <i></i>
+        </div>
+        <div class="box">
+          <input type="password" name="password" data-field="password"
+            id="senhaLogin" value="" minlength="8" required />
+          <span>Senha</span>
+          <i></i>
+        </div>
+
+        <div class="checkboxSenha">
+          <input id="checkbox-0" type="checkbox" class="mostrarsenha"
+            onclick="myFunction()">
+          <label class="password"
+            for="checkbox-0">Mostrar Senha</label>
+        </div>
+        <div class="submit">
+          <button type="submit" class="btn">Entrar</button>
+          <a href="/final_php/redefinirSenha.html">
+            <p>Esqueci minha senha</p>
+          </a>
+        </div>
+      </form>
+
+      <div class="bloco2">
+        <img class="imgLogin" src="/final_php/assets/images/logo.png" />
+      </div>
+    </div>
+    <script>
+        jQuery(document).ready(function($){ 
+          $("#cpf").mask("000.000.000-00");
+        });
+
+    //Função responsável por deixar a senha visível
+        function myFunction() {
+          var x = document.getElementById("senhaLogin");
+          if (x.type === "password") {
+              x.type = "text";
+          } else {
+              x.type = "password";
+          }
+        }
+
+
+const form = document.querySelector('[data-form]');
+const fields = document.querySelectorAll('[required]');
+
+function findError(field) {
+  let errorFounded = false;
+  const validations = field.validity;
+  //validations.passwordsDontMatch = passwordConfirmationError();
+
+  for (let errorKey in validations) {
+    if (validations[errorKey] && !validations.valid) {
+      console.log(errorKey);
+      errorFounded = errorKey;
+    }
+  }
+  return errorFounded;
+}
+
+function customErroMessage(error) {
+  let defaultMessage = 'Algo deu errado! Verifique seus dados novamente :D'; //Default message
+  if (error == 'valueMissing') return 'Nenhum campo pode ficar vazio!';
+  if (error == 'tooShort') return 'Senhas abaixo de 6 caracteres não existem!';
+  //if (error == 'passwordDontMatch') return 'Suas senhas não correspondem!';
+  return defaultMessage;
+}
+
+function customValidation(event) {
+  const field = event.target;
+  const warningContainer = document.querySelector('[data-warning-visible]');
+  const warningContent = warningContainer.querySelector('[data-warning-text]');
+  const fieldContainer = field.parentNode;
+  const error = findError(field);
+  const errorMessage = customErroMessage(error);
+  if (error) {
+    fieldContainer.style.backgroundColor = 'var(--bg-text-field-wrong)';
+    field.style.backgroundColor = 'var(--bg-text-field-wrong)';
+    warningContainer.setAttribute('data-warning-visible', true);
+    warningContent.innerHTML = errorMessage;
+  } else {
+    fieldContainer.style.backgroundColor = 'var(--bg-text-field-correct)';
+    field.style.backgroundColor = 'var(--bg-text-field-correct)';
+    warningContainer.setAttribute('data-warning-visible', false);
+    warningContent.innerHTML = '';
+  }
+}
+
+function validateInputField(field) {
+  field.addEventListener('invalid', event => {
+    event.preventDefault(); //Cancel the default validation bubble
+    customValidation(event);
+  });
+
+  field.addEventListener('blur', event => customValidation(event)); //When the field loose focus the custom validation is added
+}
+
+fields.forEach((field) => validateInputField(field));
+
+//Code that should be executed when you hit the submit button
+form.addEventListener('submit', (event) => {
+  console.log('pode enviaaaar');
+  event.preventDefault();
+});
+  </script>
+  </body>
+</html>

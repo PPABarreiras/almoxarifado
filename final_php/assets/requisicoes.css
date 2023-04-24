@@ -1,0 +1,163 @@
+.container {
+    padding: 2rem;
+  }
+  table {
+    flex-direction: column;
+    border: 1px solid black;
+    border-collapse: collapse;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    table-layout: fixed;
+  }
+  
+  table caption {
+    font-size: 2em;
+    font-family: ui-monospace;
+    margin: 0.5em 0 0.75em;
+  }
+  
+  table tr {
+    /* display: flex;
+    justify-content: space-between; */
+    background-color: #eee;
+    border: 1px solid #ddd;
+    padding: 0.35em;
+  }
+  
+  table th,
+  table td {
+    padding: 0.625em;
+    text-align: center;
+  }
+  
+  table th {
+    font-size: 0.85em;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    background-color: rgb(79, 0, 106);
+    color: #fff;
+  }
+  
+  table tbody {
+    width: 100%;
+  }
+  
+  .action {
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+  }
+  
+  .btn {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    margin-top: 5rem;
+    background-color: #060552;
+    color: #fff;
+    font-size: 0.8rem;
+    transition: 0.6s;
+    padding: 0.8rem;
+    border-radius: 0.3rem;
+  }
+  
+  .btn:hover {
+    background-color: #38AECC;
+  }
+  .thead .th:last-child {
+    margin-right: 40px;
+  }
+  
+  .tbody .tr:nth-child(odd) {
+    background-color: #fee;
+  }
+  
+  .tbody .tr:nth-child(even) {
+    background-color: #eee;
+  }
+  
+  .thead .th:first-child {
+    width: 35%;
+  }
+  
+  .tbody .tr td:first-child {
+    width: 35%;
+  }
+  
+  @media screen and (max-width: 600px) {
+    table {
+      border: 0;
+    }
+  
+    table caption {
+      font-size: 1.3em;
+    }
+  
+    table thead {
+      border: none;
+      clip: rect(0 0 0 0);
+      height: 1px;
+      margin: -1px;
+      overflow: hidden;
+      padding: 0;
+      position: absolute;
+      width: 1px;
+    }
+  
+    table tr {
+      border-bottom: 3px solid #ddd;
+      display: block;
+      margin-bottom: 0.625em;
+    }
+  
+    table td {
+      border-bottom: 1px solid #ddd;
+      display: block;
+      font-size: 0.8em;
+      text-align: right;
+    }
+  
+    table td::before {
+      content: attr(data-label);
+      float: left;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+  
+    table td:last-child {
+      border-bottom: 0;
+    }
+  }
+  
+  .status {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  @media screen and (max-width: 600px) {
+    .status {
+      justify-content: space-between;
+    }
+  }
+  
+  .radius {
+    border-radius: 50%;
+    width: 1rem;
+    height: 1rem;
+    flex-shrink: 0;
+  }
+  
+  #statusRed {
+    background-color: red;
+  }
+  #statusGreen {
+    background-color: green;
+  }
+  
+  #statusYellow {
+    background-color: yellow;
+  }
+  

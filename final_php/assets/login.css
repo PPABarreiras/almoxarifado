@@ -1,0 +1,211 @@
+.content {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    padding: 10rem 10%;
+    gap: 3rem;
+    height: 100vh;
+    background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 1) 22%,
+      rgba(87, 21, 109, 1) 61%,
+      rgba(37, 41, 149, 1) 100%,
+      rgba(83, 11, 95, 1) 100%
+    );
+  }
+  
+  @media screen and (max-width: 600px) {
+    .content {    
+      flex-wrap: wrap;
+      padding: 5rem 2rem
+    }
+  }
+  
+  .form {
+    width: 25rem;
+  }
+  
+  .title {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    padding-bottom: 2rem;
+  }
+
+  .title a {
+    color: #060552;
+    background-color: #ccc;
+    padding: 10px;
+    border-radius: 10px;
+    transition: 800ms;
+  }
+
+  .title a:hover {
+    color: #ccc;
+    background-color: #060552;
+  }
+
+  .imgLogin {
+    width: 100%;
+    max-width: 30rem;
+    min-width: 10rem;
+    height: 100%;
+    min-height: 10rem;
+    max-height: 25rem;
+  }
+  
+  @media screen and (max-width: 600px) {
+    .imgLogin {
+      width: 100%;
+      max-width: 20rem;
+      min-width: 10rem;
+      height: 100%;
+      min-height: 10rem;
+      max-height: 15rem;
+    }
+  }
+  
+  .box {
+    position: relative;
+    margin-bottom: 1rem;
+  }
+  
+  .box input {
+    width: 100%;
+    padding: 0.8rem;
+    color: #fff;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    letter-spacing: 0.1em;
+    background: transparent;
+    box-shadow: none;
+  }
+  
+  .box span {
+    position: absolute;
+    left: 0;
+    color: #fff;
+    padding: 0.4rem 0 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    pointer-events: none;
+    transition: 0.5s;
+  }
+  
+  .box input:valid ~ span,
+  .box input:focus ~ span {
+    color: #fff;
+    transform: translatey(-20px);
+    font-size: 0.8em;
+  }
+  
+  .box i {
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    left: 0;
+    bottom: 0;
+    background: #495057;
+    overflow: hidden;
+  }
+  
+  .box i::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: -100%;
+    background: linear-gradient(
+      50deg,
+      #212529,
+      #f8f9fa,
+      #e9ecef,
+      #dee2e6,
+      #ced4da,
+      #adb5bd,
+      #6c757d,
+      #495057,
+      #343a40,
+      #212529
+    );
+    animation: animate 0.9s linear infinite;
+    transition: 0.5s;
+  }
+  
+  .box input:valid ~ i::before,
+  .box input:focus ~ i::before {
+    left: 0;
+  }
+  
+  @keyframes animate {
+    0% {
+      background-position-x: 0;
+    }
+    100% {
+      background-position-x: 280px;
+    }
+  }
+  
+  .submit {
+    text-align: center;
+    color: #fff;
+  }
+  
+  .btn, .buttonRedefinir {
+    background: #fff;
+    color: #060552;
+    padding: 0.4rem;
+    border: 0.2rem solid #060552;
+    border-radius: 0.5rem;
+    transition: 0.5s;
+    margin-bottom: 1rem;
+  }
+  
+  .btn, .buttonRedefinir:hover {
+    background-color: #060552;
+    color: white;
+  }
+  
+  .checkboxSenha {
+    display: flex;
+    font-size: 15px;
+    justify-content: start;
+    margin-bottom: 1.4rem;
+    margin-top: 1.4rem;
+  }
+  
+  .password {
+    color: #fff;
+  }
+  
+  .checkboxSenha input {
+    display: none;
+  }
+  
+  .checkboxSenha input:checked + label:before {
+    background-image: url("data:image/svg+xml,%0A%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 10 10'%3E%3Cg class='nc-icon-wrapper' stroke-width='1' fill='%23555555'%3E%3Cpath fill='none' stroke='%23FFFFFF' stroke-linecap='round' stroke-linejoin='round' stroke-miterlimit='10' data-cap='butt' d='M2.83 4.72l1.58 1.58 2.83-2.83'/%3E%3C/g%3E%3C/svg%3E");
+    background-color: #060552;
+    background-position: center;
+    border: none;
+    padding: 1px;
+  }
+  
+  .checkboxSenha input + label:before {
+    content: "";
+    width: 18px;
+    height: 18px;
+    border-radius: 4px;
+    background-color: white;
+    border: 1px solid #060552;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 8px;
+  }
+  
+  .errorContainer {
+    display: flex;
+    justify-content: center;
+    color: red;
+    margin-bottom: 2rem;
+  }

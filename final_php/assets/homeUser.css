@@ -1,0 +1,98 @@
+.btn {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    margin-top: 5rem;
+    background-color: rgb(79, 0, 106);
+    color: #fff;
+    font-size: 0.8rem;
+    transition: 0.6s;
+    padding: 0.8rem;
+    border-radius: 0.3rem;
+  }
+  
+  .btn:hover {
+    background-color: #3d4152;
+  }
+  
+  .searchbox {
+    width: 100%;
+    position: relative;
+    display: flex;
+  }
+  
+  .searchinput {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid rgb(79, 0, 106);
+    border-radius: 10px;
+    outline: none;
+    font-size: 20px;
+    color: #3d4152;
+    background: none;
+  }
+
+  .searchinput::placeholder {
+    color:#3d4152;
+  }
+  
+  .searchbutton {
+    text-align: center;
+    height: 55px;
+    width: 40px;
+    outline: none;
+    cursor: pointer;
+    border: 2px solid #4f006a;
+    border-radius: 0 10px 10px 0;
+    border-left: none;
+    background: none;
+    font-size: 25px;
+    border-left: 2px solid #3d4152;
+  }
+  
+  .containerInput {
+    width: 40%;
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .iconSearch {
+    fill: invert(15%) sepia(28%) saturate(4293%) hue-rotate(264deg) brightness(103%) contrast(133%);
+  }
+  
+  .iconSearch:hover {
+    fill: invert(22%) sepia(23%) saturate(524%) hue-rotate(191deg) brightness(97%) contrast(87%);
+  } 
+
+  .resultadoPesquisa {
+    width: 80vw;
+  }
+
+  .radius {
+    border-radius: 50%;
+    margin: auto;
+    width: 1rem;
+    height: 1rem;
+    flex-shrink: 0;
+  }
+  
+  .statusRed {
+    background-color: red;
+  }
+
+  .statusGreen {
+    background-color: green;
+  }
+  
+  .statusYellow {
+    background-color: yellow;
+  }
+
+  .statusGray {
+    background-color: gray;
+  }
+
+ 

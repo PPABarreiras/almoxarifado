@@ -1,0 +1,25 @@
+.title {
+  text-align: center;
+  padding: 30px;
+}
+
+.tag {
+  color: red;
+}
+
+.box {
+  width: 90vw;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid black;
+}
+
+select {
+  padding: 5px;
+  border: 1px solid dimgray;
+  border-radius: 9px;
+}
+
+option:nth-child(odd) {
+  background-color: cornsilk;
+}

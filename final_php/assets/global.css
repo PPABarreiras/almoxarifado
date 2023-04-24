@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Josefin Sans", sans-serif;
+  }
+  
+  /* html,
+  body,
+  #root {
+    max-height: 100vh;
+    max-width: 100vw;
+    width: 100%;
+    height: 100%;
+  } */
+  
+  *,
+  button,
+  input {
+    border: 0;
+    background-color: none;
+    font-size: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto,
+      "Helvetica Neue", Ubuntu, Arial, sans-serif;
+  }
+  
+  a {
+    text-decoration: none;
+    list-style: none;
+    color: white;
+  }
+
+  h1{
+    text-align: center;
+  }

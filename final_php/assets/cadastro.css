@@ -1,0 +1,242 @@
+.tudo {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    padding: 10rem 10%;
+    gap: 2rem;
+    height: 100vh;
+    background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 1) 22%,
+    rgba(87, 21, 109, 1) 61%,
+    rgba(37, 41, 149, 1) 100%,
+    rgba(83, 11, 95, 1) 100%
+  );
+    
+}
+
+  
+@media screen and (max-width: 690px) {
+  .tudo {
+    flex-wrap: wrap;
+  }
+}
+.content {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  padding: 10rem 10%;
+  gap: 3rem;
+
+}
+
+@media screen and (max-width: 600px) {
+  .content {
+    flex-wrap: wrap;
+  }
+}
+
+.content2 {
+  align-items: center;
+  /* display: flex; */
+  justify-content: center;
+  padding: 10rem 10%;
+  gap: 3rem;
+}
+.form {
+  width: 25rem;
+}
+
+@media screen and (max-width: 400px) {
+  .form {
+    width: 10rem;
+  }
+}
+
+.title {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  padding: 10px 0px;
+}
+
+.title a {
+  color: #060552;
+  background-color: #ccc;
+  padding: 10px;
+  border-radius: 10px;
+  transition: 800ms;
+}
+
+.title a:hover {
+  color: #ccc;
+  background-color: #060552;
+}
+
+.imgLogin {
+  width: 100%;
+  max-width: 30rem;
+  min-width: 10rem;
+  height: 100%;
+  min-height: 10rem;
+  max-height: 25rem;
+}
+
+@media screen and (max-width: 600px) {
+  .imgLogin {
+    width: 100%;
+    max-width: 20rem;
+    min-width: 10rem;
+    height: 100%;
+    min-height: 10rem;
+    max-height: 15rem;
+  }
+}
+
+/* p {
+  color: white;
+} */
+
+.box {
+  position: relative;
+  /* width: 280px;
+  width: 50%; */
+
+  margin-bottom: 1rem;
+}
+
+.box input {
+  width: 100%;
+  padding: 0.8rem;
+  color: #fff;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+  background: transparent;
+  box-shadow: none;
+}
+
+.box span {
+  position: absolute;
+  left: 0;
+  color: #fff;
+  padding: 0.4rem 0 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  pointer-events: none;
+  transition: 0.5s;
+}
+
+.box input:valid ~ span,
+.box input:focus ~ span {
+  color: #fff;
+  transform: translatey(-20px);
+  font-size: 0.8em;
+}
+
+.box i {
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  left: 0;
+  bottom: 0;
+  background: #495057;
+  overflow: hidden;
+}
+
+.box i::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: -100%;
+  background: linear-gradient(
+    50deg,
+    #212529,
+    #f8f9fa,
+    #e9ecef,
+    #dee2e6,
+    #ced4da,
+    #adb5bd,
+    #6c757d,
+    #495057,
+    #343a40,
+    #212529
+  );
+  animation: animate 0.9s linear infinite;
+  transition: 0.5s;
+}
+
+
+.box input:valid ~ i::before,
+.box input:focus ~ i::before {
+  left: 0;
+}
+
+@keyframes animate {
+  0% {
+    background-position-x: 0;
+  }
+  100% {
+    background-position-x: 280px;
+  }
+}
+
+.submit {
+  text-align: center;
+  color: #fff;
+}
+
+.btn {
+  background: #fff;
+  color: #060552;
+  padding: 0.4rem;
+  border: 0.2rem solid #060552;
+  border-radius: 0.5rem;
+  transition: 0.5s;
+}
+
+.btn:hover {
+  background-color: #060552;
+  color: white;
+}
+
+select {
+  border-radius: 10px;
+  padding: 10px;
+  background-color: white;
+}
+
+input[type="submit"] {
+  border-radius: 10px;
+  padding: 10px;
+  background-color: white;
+  transition: 300ms;
+}
+
+input[type="submit"]:hover {
+  background-color: #060552;
+}
+
+input::placeholder {
+  opacity: 0; outline: 0; border: 0;
+}
+
+input:focus::placeholder {
+  opacity: 1; outline: 0; border: 0;
+}
+
+h1{
+  color: #fff;
+  margin-bottom: 5rem;
+}
+
+.statusBox {
+  border: 1px solid white;
+
+}
+
+label {
+  color: white;
+}
