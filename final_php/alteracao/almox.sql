@@ -31,30 +31,40 @@ CREATE TABLE materiais (
 
 );
 
-CREATE TABLE fornecedores (
-  id INT PRIMARY KEY AUTO_INCREMENT,
-  nome VARCHAR(100) NOT NULL,
-  endereco VARCHAR(200) NOT NULL,
-  telefone VARCHAR(20) NOT NULL,
-  email VARCHAR(100) NOT NULL
-);
-
-INSERT INTO materiais (nome, quantidade, data_aquisicao, categoria_id, fornecedor_id)
+INSERT INTO materiais (nome, categoria_id, quantidade, fornecedor_id, data_aquisicao) -- sendo feito o insert de acordo com cada categoria (eletronicos)
 VALUES
+  ('Smartphone', 1, 50, 3, '2023-08-29'),
+  ('Notebook', 1, 30, 5, '2023-08-29');
 
-  ('Lápis', 100, '2023-06-27',1, 3), -- a categoria é semelhante, pois pode ser gravadosjuntos, já os fornecedor pode
-  ('Régua', 150, '2023-06-27', 1, 5),
-  ('Papel A4', 100, '2023-06-27', 1, 7),
-  ('Pincéis', 70, '2023-06-29', 1, 9),
-  ('Lápis', 100, '2023-06-27', 1, 1),
-  ('Pastas', 100, '2023-06-23', 1, 4),
-  ('Caneta', 50, '2023-06-28', 1, 8),
-  ('Borracha', 200, '2023-06-29', 1), 8,
-  ('Giz de cera', 200, '2023-06-29',1, 13),
-  ('Tinta Guache', 200, '2023-06-29', 1, 2),
-  ('Papel Sulfite', 200, '2023-06-29', 1, 1);
+INSERT INTO materiais (nome, categoria_id, quantidade, fornecedor_id, data_aquisicao)
+VALUES --(Papelaria)
+  ('Caneta Esferográfica', 2, 200, 3, '2023-08-29'),
+  ('Bloco de Notas', 2, 150, 6, '2023-08-29');
+  
+INSERT INTO materiais (nome, categoria_id, quantidade, fornecedor_id, data_aquisicao)
+VALUES --(material de limpeza)
+  ('Detergente', 3, 100, 4, '2023-08-29'),
+  ('Pano de Limpeza', 3, 200, 5, '2023-08-29');
 
-    -- existe a necessidade de já fazer os insert com os dados do almoxarifado? ou é só necessario criar um pararametro para o usuario/adm poder inserir os dados necessarios.
+INSERT INTO materiais (nome, categoria_id, quantidade, fornecedor_id, data_aquisicao)
+VALUES --(ferramentas)
+  ('Chave de Fenda', 4, 50, 7, '2023-08-29'),
+  ('Martelo', 4, 30, 8, '2023-08-29');
+
+INSERT INTO materiais (nome, categoria_id, quantidade, fornecedor_id, data_aquisicao)
+VALUES --(alimentos)
+  ('Arroz', 5, 100, 9, '2023-08-29'),
+  ('Feijão', 5, 150, 10, '2023-08-29');
+
+INSERT INTO materiais (nome, categoria_id, quantidade, fornecedor_id, data_aquisicao)
+VALUES --(CAMED)
+  ('Dipirona', 6, 20, 11, '2023-08-29'),
+  ('Termômetro', 6, 30, 12, '2023-08-29');
+
+INSERT INTO materiais (nome, categoria_id, quantidade, fornecedor_id, data_aquisicao)
+VALUES --(vestiario)
+  ('Farda', 7, 200, 13, '2023-08-29'),
+  ('Meias', 7, 150, 14, '2023-08-29');
 
   CREATE TABLE fornecedores (
   id INT PRIMARY KEY AUTO_INCREMENT,
@@ -64,6 +74,12 @@ VALUES
   email VARCHAR(100) NOT NULL
 );
 
+INSERT INTO fornecedores (nome, endereco, telefone, email)
+VALUES
+  ('Fornecedor A', 'Rua A, 123', '(11) 1234-5678', 'fornecedor_a@example.com'),
+  ('Fornecedor B', 'Rua B, 456', '(22) 9876-5432', 'fornecedor_b@example.com'),
+  ('Fornecedor C', 'Rua C, 789', '(33) 5555-5555', 'fornecedor_c@example.com');
+
 CREATE TABLE solicitacoes (
   id INT PRIMARY KEY AUTO_INCREMENT,
   material_id INT,
@@ -72,39 +88,12 @@ CREATE TABLE solicitacoes (
   status ENUM('pendente', 'aprovado', 'rejeitado', 'null') NOT NULL,
   FOREIGN KEY (material_id) REFERENCES materiais(id)
 ); 
-
-  -- verificar se é necessario criar um campo extra para adicionar qual categoria se adequa a cada produto 
-
-CREATE TABLE solicitacoes (
-  id INT PRIMARY KEY AUTO_INCREMENT,
-  material_id INT,
-  quantidade INT NOT NULL,
-  data_solicitacao DATE NOT NULL,
-  status ENUM('pendente', 'aprovado', 'rejeitado') NOT NULL,
-  FOREIGN KEY (material_id) REFERENCES materiais(id)
-); 
--- verificar como devo adicionar os status para cada solicitação e mostrar essa informação na tela do usuario
-
-CREATE TABLE categorias (
-  id INT PRIMARY KEY AUTO_INCREMENT,
-  nome VARCHAR(100) NOT NULL
-);
-
-INSERT INTO categorias (nome)
-VALUES
-  ('Eletrônicos'),
-  ('Papelaria'),
-  ('Limpeza'),
-  ('Ferramentas'),
-  ('Alimentos'),
-  ('CAMED'),
-  ('Vestiario');
   
 CREATE TABLE funcionarios ( -- ser utilizada no cadastro de novos funcionarios 
   id INT PRIMARY KEY AUTO_INCREMENT,
   nome VARCHAR(100) NOT NULL,
   cargo VARCHAR(100) NOT NULL,
-  email VARCHAR(100) NOT NULL,
+  email VARCHAR(100) NOT NULL,  
   telefone VARCHAR(20) NOT NULL
 );
 
@@ -115,12 +104,20 @@ senha varchar(20),
 cpf varchar (15) unique, 
 email_user varchar (120),
 telefone varchar (16),
-nivel int, -- definir niveis de privilegio entre os usuarios (1 - professor, 2 - aluno, 3 servidores)
+nivel int, 
 );
+
+create table departamento (
+  id_departamento int auto_increment primary key,
+  departamento varchar(50)
+);
+
+insert into departamento (departamento) values ('Servidor'), ('Professor'), ('Aluno'), ('DEPAD'),('DEPEN'),('CONSUP'),('DETEC'), ('CAENS'), ('CAMED');
 
 SELECT * FROM fornecedores;
 SELECT * FROM materiais;
 SELECT * FROM categorias;
 SELECT * FROM funcionarios;
 SELECT * FROM usuarios;
+select * FROM departamento; 
 
